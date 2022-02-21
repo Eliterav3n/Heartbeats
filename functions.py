@@ -1,5 +1,7 @@
-from sqlite3 import DatabaseError
-import sys, threading, time, socket
+#!/usr/bin/python3
+
+import sys, time, socket
+from threading import Thread
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -14,7 +16,7 @@ def sending(host, port, data):
     data = bytes(data)
     soc.connect((host, port))
     print(f'Connection to {host} stablished')
-    soc.sendall(DatabaseError)
+    soc.sendall()
 
 
 def listening(port, bitsize):
